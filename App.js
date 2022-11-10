@@ -25,7 +25,6 @@ export default function App() {
       <SafeAreaView>
         <StatusBar style="light" />
         <Text style={styles.title}>Drinks</Text>
-
         <Cards cardData={DATA} />
         {/* <FlatList
           style={{
@@ -77,6 +76,8 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     // justifyContent: "center",
     width: width,
+    height: height,
+    position: "absolute",
   },
   title: {
     alignSelf: "center",
