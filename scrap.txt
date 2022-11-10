@@ -1,0 +1,54 @@
+add auto flip back when out of view
+add search
+add known and unknown files
+
+<View
+          style={{
+            display: "flex",
+            backgroundColor: "white",
+            width: width,
+            height: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {dataKeys.map((drinkKey, i) => {
+            if (typeof cardData[drinkKey] === "object") {
+              console.log("is an Object: ", cardData[drinkKey]);
+              return (
+                <View
+                  style={{
+                    flexDirection: "row",
+                    backgroundColor: "red",
+                    width: "100%",
+                  }}
+                  key={i}
+                >
+                  <Text style={{ borderWidth: 1, fontSize: 20, padding: 3 }}>
+                    Name
+                  </Text>
+                  <Text
+                    style={{
+                      color: "blue",
+                      fontSize: 20,
+                      borderWidth: 1,
+                      padding: 3,
+                    }}
+                  >
+                    {cardData[drinkKey]["name"]} {cardData[drinkKey]["amount"]}{" "}
+                    Oz.
+                  </Text>
+                  {/* <Text style={{ color: "blue", fontSize: 20 }}>
+                    {cardData[drinkKey]["amount"]}
+                  </Text> */}
+                </View>
+              );
+            } else {
+              return (
+                <Text style={{ color: "blue", fontSize: 20 }} key={i}>
+                  {cardData[drinkKey]}
+                </Text>
+              );
+            }
+          })}
+        </View>

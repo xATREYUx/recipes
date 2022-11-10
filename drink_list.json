@@ -1,0 +1,685 @@
+[
+  {
+    "name": "Screwdriver",
+    "ingredient1": { "name": "Vodka", "amount": "1.5" },
+    "ingredient2": { "name": "Orange Juice", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "garnish": "Orange",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Cape Cod",
+    "ingredient1": { "name": "Vodka", "amount": "1.5" },
+    "ingredient2": { "name": "Cranberry Juice", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Greyhound",
+    "ingredient1": { "name": "Vodka", "amount": "1.5" },
+    "ingredient2": { "name": "Grapefruit Juice", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Madras",
+    "ingredient1": { "name": "Vodka", "amount": "1.5" },
+    "ingredient2": { "name": "Cranberry Juice", "amount": "Fill" },
+    "ingredient3": { "name": "Orange Juice", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Seabreeze",
+    "ingredient1": { "name": "Vodka", "amount": "1.5" },
+    "ingredient2": { "name": "Cranberry Juice", "amount": "Fill" },
+    "ingredient3": { "name": "Grapefruit Juice", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Bay Breeze",
+    "ingredient1": { "name": "Vodka", "amount": "1.5" },
+    "ingredient2": { "name": "Cranberry Juice", "amount": "Fill" },
+    "ingredient3": { "name": "Pineapple Juice", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "garnish": "Lime",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Salty Dog",
+    "ingredient1": { "name": "Vodka", "amount": "1.5" },
+    "ingredient2": { "name": "Grapefruit Juice ", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "glass": "Rocks",
+    "garnish": "Lime",
+    "note": "Greyhound with salted rim"
+  },
+  {
+    "name": "Presbyterian (\"Press\")",
+    "ingredient1": { "name": "Vodka", "amount": "1.5" },
+    "ingredient2": { "name": "Soda Water", "amount": "Fill" },
+    "ingredient3": { "name": "7-Up", "amount": "Splash" },
+    "mix_type": "Build in glass",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Fuzzy Navel",
+    "ingredient1": { "name": "Peach Schnapps", "amount": "1.5" },
+    "ingredient2": { "name": "Orange Juice", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "garnish": "Orange",
+    "glass": "Rocks",
+    "note": "Mint can garnish as well"
+  },
+  {
+    "name": "7 & 7",
+    "ingredient1": { "name": "Seagram's 7", "amount": "1.5" },
+    "ingredient2": { "name": "7-Up", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Cuba Libre",
+    "ingredient1": { "name": "Rum", "amount": "1.5" },
+    "ingredient2": { "name": "Coke", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Martini",
+    "ingredient1": { "name": "Gin or Vodka", "amount": "2" },
+    "ingredient2": { "name": "Dry Vermouth", "amount": "1/4" },
+    "mix_type": "stirred",
+    "garnish": "olive",
+    "glass": "martini"
+  },
+  {
+    "name": "Dirty Martini",
+    "ingredient1": { "name": "Gin or Vodka", "amount": "2" },
+    "ingredient2": { "name": "Dry Vermouth", "amount": "1/4" },
+    "ingredient3": { "name": "Olive Juice", "amount": "Splash" },
+    "mix_type": "stirred",
+    "garnish": "olive",
+    "glass": "martini"
+  },
+  {
+    "name": "Extra Dry Martini",
+    "ingredient1": { "name": "Gin or Vodka", "amount": "2" },
+    "mix_type": "stirred",
+    "garnish": "olive",
+    "glass": "martini",
+    "note": "Ask if they want no dry vermouth or rinsed with vermouth"
+  },
+  {
+    "name": "Manhattan",
+    "ingredient1": { "name": "Whisky", "amount": "2" },
+    "ingredient2": { "name": "Sweet Vermouth", "amount": "1/4" },
+    "mix_type": "stirred",
+    "garnish": "Cherry",
+    "glass": "martini"
+  },
+  {
+    "name": "Apple Martini",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Sour Apple Pucker", "amount": "3/4" },
+    "ingredient3": { "name": "Lime Juice", "amount": "1/4" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "martini",
+    "note": "Garnish with apple slice if available"
+  },
+  {
+    "name": "Cosmopolitan",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Triple Sec", "amount": ".5" },
+    "ingredient3": { "name": "Lime Juice", "amount": ".5" },
+    "ingredient4": { "name": "Cranberry Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "glass": "martini"
+  },
+  {
+    "name": "Lemon Drop",
+    "ingredient1": { "name": "Citrus Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Triple Sec", "amount": "3/4" },
+    "ingredient3": { "name": "Sour Mix", "amount": "Splash" },
+    "ingredient4": { "name": "Lemon Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "glass": "martini",
+    "note": "Sugar Rim"
+  },
+  {
+    "name": "Chocolate Martini",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Creme de Cacao", "amount": "3/4" },
+    "ingredient3": { "name": "Cream", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "martini",
+    "note": "Lightly shake"
+  },
+  {
+    "name": "Long Island Iced Tea",
+    "ingredient1": { "name": "Vodka", "amount": ".5" },
+    "ingredient2": { "name": "Gin", "amount": ".5" },
+    "ingredient3": { "name": "Rum", "amount": ".5" },
+    "ingredient4": { "name": "Triple Sec", "amount": ".5" },
+    "ingredient5": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient6": { "name": "Coke", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "lemon",
+    "glass": "collins"
+  },
+  {
+    "name": "Long Beach Iced Tea",
+    "ingredient1": { "name": "Vodka", "amount": ".5" },
+    "ingredient2": { "name": "Gin", "amount": ".5" },
+    "ingredient3": { "name": "Rum", "amount": ".5" },
+    "ingredient4": { "name": "Triple Sec", "amount": ".5" },
+    "ingredient5": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient6": { "name": "Cranberry Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "lemon",
+    "glass": "collins"
+  },
+  {
+    "name": "Tokyo Tea",
+    "ingredient1": { "name": "Vodka", "amount": ".5" },
+    "ingredient2": { "name": "Rum", "amount": ".5" },
+    "ingredient3": { "name": "Midori", "amount": ".5" },
+    "ingredient4": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient5": { "name": "7-Up", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "lemon",
+    "glass": "collins"
+  },
+  {
+    "name": "Adios M.F.",
+    "ingredient1": { "name": "Vodka", "amount": ".5" },
+    "ingredient2": { "name": "Gin", "amount": ".5" },
+    "ingredient3": { "name": "Rum", "amount": ".5" },
+    "ingredient4": { "name": "Blue Curacao", "amount": ".5" },
+    "ingredient5": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient6": { "name": "7-Up", "amount": "Splash" },
+    "ingredient7": { "name": "Bacardi 151", "amount": "Float" },
+    "mix_type": "Shaken",
+    "garnish": "lemon",
+    "glass": "collins"
+  },
+  {
+    "name": "Whisky Sour",
+    "ingredient1": { "name": "Whisky", "amount": "1 1/4" },
+    "ingredient2": { "name": "Sour Mix", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Midori Sour",
+    "ingredient1": { "name": "Midori", "amount": "1 1/4" },
+    "ingredient2": { "name": "Sour Mix", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Amaretto Sour",
+    "ingredient1": { "name": "Amaretto", "amount": "1 1/4" },
+    "ingredient2": { "name": "Sour Mix", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Black Russian",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Kahlua", "amount": "3/4" },
+    "mix_type": "Build in glass",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "White Russian",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Kahula", "amount": "3/4" },
+    "ingredient3": { "name": "Cream", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Colorado Bulldog",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Kahula", "amount": "3/4" },
+    "ingredient3": { "name": "Cream", "amount": "Fill" },
+    "ingredient4": { "name": "Coke", "amount": "Splash" },
+    "mix_type": "Build in glass",
+    "garnish": "Cherry",
+    "glass": "collins"
+  },
+  {
+    "name": "French Connection",
+    "ingredient1": { "name": "Cognac", "amount": "3/4" },
+    "ingredient2": { "name": "Grand Marnier", "amount": "3/4" },
+    "mix_type": "Build in glass",
+    "garnish": "Cherry",
+    "glass": "snifter",
+    "note": "No Ice"
+  },
+  {
+    "name": "Blue Hawaiian",
+    "ingredient1": { "name": "Rum", "amount": "1" },
+    "ingredient2": { "name": "Blue Curacao", "amount": "1" },
+    "ingredient3": { "name": "Pineapple Juice", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "collins",
+    "note": "Use Hurricane glass if available. Lightly shake"
+  },
+  {
+    "name": "Mai Tai",
+    "ingredient1": { "name": "Rum", "amount": "1" },
+    "ingredient2": { "name": "Triple Sec", "amount": ".5" },
+    "ingredient3": { "name": "Orange Juice", "amount": "Fill" },
+    "ingredient4": { "name": "Pineapple Juice", "amount": "Fill" },
+    "ingredient5": { "name": "Grenadine", "amount": "Splash" },
+    "ingredient6": { "name": "Myer's Dark Rum", "amount": "Float" },
+    "mix_type": "Build in glass",
+    "garnish": "Cherry",
+    "glass": "collins"
+  },
+  {
+    "name": "Hurricane",
+    "ingredient1": { "name": "Rum", "amount": "1" },
+    "ingredient2": { "name": "Myer's Dark Rum", "amount": "1" },
+    "ingredient3": { "name": "Orange Juice", "amount": "Fill" },
+    "ingredient4": { "name": "Pineapple", "amount": "Fill" },
+    "ingredient5": { "name": "Grenadine", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "collins",
+    "note": "Lightly shake. Hurricane glass."
+  },
+  {
+    "name": "Tequila Sunrise",
+    "ingredient1": { "name": "Tequila", "amount": "1 1/4" },
+    "ingredient2": { "name": "Orange Juice", "amount": "Fill" },
+    "ingredient3": { "name": "Grenadine", "amount": "1/4" },
+    "mix_type": "Build in glass",
+    "garnish": "Cherry",
+    "glass": "collins"
+  },
+  {
+    "name": "Sex on the Beach",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Peach Schnapps", "amount": "3/4" },
+    "ingredient3": { "name": "Cranberry Juice", "amount": "Fill" },
+    "ingredient4": { "name": "Pineapple Juice", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "collins",
+    "note": "Hurricane glass."
+  },
+  {
+    "name": "Incredible Hulk",
+    "ingredient1": { "name": "Cognac", "amount": "3/4" },
+    "ingredient2": { "name": "Hpnotiq", "amount": "3/4" },
+    "mix_type": "Build in glass",
+    "garnish": "Cherry",
+    "glass": "snifter"
+  },
+  {
+    "name": "Lynchburg Lemonade",
+    "ingredient1": { "name": "Jack Daniel's", "amount": "1 1/4" },
+    "ingredient2": { "name": "Triple Sec", "amount": "3/4" },
+    "ingredient3": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient4": { "name": "Sprite", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "lemon",
+    "glass": "collins"
+  },
+  {
+    "name": "Margarita",
+    "ingredient1": { "name": "Tequila", "amount": "1 1/4" },
+    "ingredient2": { "name": "Triple Sec", "amount": "3/4" },
+    "ingredient3": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient4": { "name": "Lime Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "glass": "collins",
+    "note": "Salt the rim."
+  },
+  {
+    "name": "Blue Margarita",
+    "ingredient1": { "name": "Tequila", "amount": "1 1/4" },
+    "ingredient2": { "name": "Blue Caracao", "amount": "3/4" },
+    "ingredient3": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient4": { "name": "Lime Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "glass": "collins",
+    "note": "Salt the rim. Hurricane glass if available."
+  },
+  {
+    "name": "Cadillac Margarita",
+    "ingredient1": { "name": "Cuervo 1800", "amount": "1 1/4" },
+    "ingredient2": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient3": { "name": "Lime Juice", "amount": "Splash" },
+    "ingredient4": { "name": "Grand Marnier", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "glass": "collins",
+    "note": "Salt the rim."
+  },
+  {
+    "name": "Vodka Collins",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient3": { "name": "Soda Water", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "collins"
+  },
+  {
+    "name": "Tom Collins",
+    "ingredient1": { "name": "Gin", "amount": "1 1/4" },
+    "ingredient2": { "name": "Sour Mix", "amount": "Fill" },
+    "ingredient3": { "name": "Soda Water", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "collins",
+    "note": "Top with the soda after Shaken and poured."
+  },
+  {
+    "name": "Liquid Cocaine",
+    "ingredient1": { "name": "Southern Comfort", "amount": ".5" },
+    "ingredient2": { "name": "Amaretto", "amount": ".5" },
+    "ingredient3": { "name": "Grand Marnier", "amount": ".5" },
+    "ingredient4": { "name": "Pineapple Juice", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "collins"
+  },
+  {
+    "name": "Mojito",
+    "ingredient1": { "name": "Rum", "amount": "1 1/4" },
+    "ingredient2": { "name": "Soda Water", "amount": "Fill" },
+    "mix_type": "Shaken",
+    "glass": "collins",
+    "note": "Muddle mint leaves, sugar, lime juice"
+  },
+  {
+    "name": "Bloody Mary",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Bloody Mary Mix", "amount": "Fill" },
+    "ingredient3": { "name": "Tabasco or Worcestershire", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "collins",
+    "note": "Garnish with celery. Salt the rim."
+  },
+  {
+    "name": "Alabama Slammer",
+    "ingredient1": { "name": "Sloe Gin", "amount": "1/4" },
+    "ingredient2": { "name": "Southern Comfort", "amount": "3/4" },
+    "ingredient3": { "name": "Amaretto", "amount": ".5" },
+    "ingredient4": { "name": "Orange Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Apple Sauce",
+    "ingredient1": { "name": "Apple Pucker", "amount": "3/4" },
+    "ingredient2": { "name": "Goldschlager", "amount": "3/4" },
+    "ingredient3": { "name": "Pineapple Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Brain Hemmorage",
+    "ingredient1": { "name": "Peach Schnapps", "amount": "3/4" },
+    "ingredient2": { "name": "Bailey's", "amount": "3/4" },
+    "ingredient3": { "name": "Grenadine", "amount": "Splash" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Shot",
+    "note": "Layer each in a Shot glass"
+  },
+  {
+    "name": "Kamikazi",
+    "ingredient1": { "name": "Vodka", "amount": "1" },
+    "ingredient2": { "name": "Triple Sec", "amount": ".5" },
+    "ingredient3": { "name": "Lime Juice", "amount": ".5" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Purple Hooter",
+    "ingredient1": { "name": "Vodka", "amount": "1" },
+    "ingredient2": { "name": "Triple Sec", "amount": ".5" },
+    "ingredient3": { "name": "Lime juice", "amount": ".5" },
+    "ingredient4": { "name": "Chambord", "amount": ".5" },
+    "mix_type": "Shaken",
+    "glass": "Rocks",
+    "note": "Its a Kamikazi with Chambord"
+  },
+  {
+    "name": "Jolly Rancher",
+    "ingredient1": { "name": "Vodka", "amount": ".5" },
+    "ingredient2": { "name": "Apple Pucker", "amount": ".5" },
+    "ingredient3": { "name": "Triple Sec", "amount": ".5" },
+    "ingredient4": { "name": "Cranberry Juice", "amount": "Splash" },
+    "ingredient5": { "name": "Lime Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Mind Eraser",
+    "ingredient1": { "name": "Vodka", "amount": "1 1/4" },
+    "ingredient2": { "name": "Kahlua", "amount": "3/4" },
+    "ingredient3": { "name": "Soda Water", "amount": "Fill" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Rocks"
+  },
+  {
+    "name": "White Gummy Bear",
+    "ingredient1": { "name": "Stoli Razberi", "amount": "3/4" },
+    "ingredient2": { "name": "Peach Schnapps", "amount": "3/4" },
+    "ingredient3": { "name": "Lime Juice", "amount": "Splash" },
+    "ingredient4": { "name": "7-Up", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Chocolate Cake",
+    "ingredient1": { "name": "Stoli Vanilla", "amount": "3/4" },
+    "ingredient2": { "name": "Frangelico", "amount": "3/4" },
+    "mix_type": "Shaken",
+    "garnish": "lemon",
+    "glass": "Rocks",
+    "note": "Garnish with sugar coated lemon wedge"
+  },
+  {
+    "name": "Three Wisemen",
+    "ingredient1": { "name": "Johnny Walker", "amount": ".5" },
+    "ingredient2": { "name": "Jack Daniel's", "amount": ".5" },
+    "ingredient3": { "name": "Jim Beam", "amount": ".5" },
+    "mix_type": "Build in glass",
+    "garnish": "Cherry",
+    "glass": "Rocks",
+    "note": "Add Jose Cuervo to make it 4-horsemen"
+  },
+  {
+    "name": "Red Headed Slut",
+    "ingredient1": { "name": "Jagermeister", "amount": "3/4" },
+    "ingredient2": { "name": "Peach Schnapps", "amount": "3/4" },
+    "ingredient3": { "name": "Cranberry Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "Rocks",
+    "note": "Straberry garnish if available"
+  },
+  {
+    "name": "Surfer on Acid",
+    "ingredient1": { "name": "Malibu Rum", "amount": "3/4" },
+    "ingredient2": { "name": "Jagermerister", "amount": "3/4" },
+    "ingredient3": { "name": "Pineapple Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "glass": "Rocks",
+    "note": "Pineapple garnish if available."
+  },
+  {
+    "name": "Washington Apple",
+    "ingredient1": { "name": "Crown Apple", "amount": "3/4" },
+    "ingredient2": { "name": "Apple Pucker", "amount": "3/4" },
+    "ingredient3": { "name": "Cranberry Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "none",
+    "glass": "Rocks",
+    "note": "Apple slice garnish if available"
+  },
+  {
+    "name": "Mexican Hummer",
+    "ingredient1": { "name": "Tequila", "amount": "3/4" },
+    "ingredient2": { "name": "Watermelon Pucker", "amount": "3/4" },
+    "ingredient3": { "name": "Sour Mix", "amount": "Splash" },
+    "ingredient4": { "name": "7-Up", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "none",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Buttery Nipple",
+    "ingredient1": { "name": "Butterscotch Schnapps", "amount": "3/4" },
+    "ingredient2": { "name": "Bailey's", "amount": "3/4" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Shot",
+    "note": "Leyered in glass"
+  },
+  {
+    "name": "Oatmeal Cookie",
+    "ingredient1": { "name": "Bailey's", "amount": "3/4" },
+    "ingredient2": { "name": "Butterscotch Schnapps", "amount": "3/4" },
+    "ingredient3": { "name": "Goldschlager", "amount": "3/4" },
+    "mix_type": "Shaken",
+    "garnish": "none",
+    "glass": "Shot"
+  },
+  {
+    "name": "B-52",
+    "ingredient1": { "name": "Kahlua", "amount": ".5" },
+    "ingredient2": { "name": "Bailey's", "amount": ".5" },
+    "ingredient3": { "name": "Grand Marnier", "amount": ".5" },
+    "mix_type": "Shaken",
+    "garnish": "none",
+    "glass": "Shot",
+    "note": "Can be Shaken, layered, built in-glass, or with coffee"
+  },
+  {
+    "name": "Blow Job",
+    "ingredient1": { "name": "Kahlua", "amount": "3/4" },
+    "ingredient2": { "name": "Bailey's", "amount": "3/4" },
+    "ingredient3": { "name": "Whipped cream", "amount": "Float" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Shot",
+    "note": "Layered"
+  },
+  {
+    "name": "Cement Mixer",
+    "ingredient1": { "name": "Bailey's", "amount": "1" },
+    "ingredient2": { "name": "Lime Juice", "amount": "1" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Shot",
+    "note": "Served in seperate glasses."
+  },
+  {
+    "name": "Nuts & Berries",
+    "ingredient1": { "name": "Frangelico", "amount": "3/4" },
+    "ingredient2": { "name": "Chambord", "amount": "3/4" },
+    "ingredient3": { "name": "Cream", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "none",
+    "glass": "Rocks"
+  },
+  {
+    "name": "Scooby Snack",
+    "ingredient1": { "name": "Malibu Rum", "amount": "3/4" },
+    "ingredient2": { "name": "Midori", "amount": "3/4" },
+    "ingredient3": { "name": "Pineapple Juice", "amount": "Splash" },
+    "ingredient4": { "name": "Whipped Cream", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "none",
+    "glass": "Rocks",
+    "note": "Garnish with whipped cream"
+  },
+  {
+    "name": "Wedding Cake",
+    "ingredient1": { "name": "Stoli Vanilla", "amount": ".5" },
+    "ingredient2": { "name": "Amaretto", "amount": ".5" },
+    "ingredient3": { "name": "White Cacao", "amount": ".5" },
+    "ingredient4": { "name": "Cream", "amount": "Splash" },
+    "ingredient5": { "name": "Pineapple Juice", "amount": "Splash" },
+    "ingredient6": { "name": "Grenadine", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "none",
+    "glass": "Shot"
+  },
+  {
+    "name": "Irish Car Bomb",
+    "ingredient1": { "name": "Bailey's ", "amount": "3/4" },
+    "ingredient2": { "name": "Jameson", "amount": "3/4" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Shot",
+    "note": "Fill pint glass halfway with Guinness"
+  },
+  {
+    "name": "Jager Bomb",
+    "ingredient1": { "name": "Jagermeister", "amount": "1.5" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Shot",
+    "note": "Pour half of one Red Bull into pint glass"
+  },
+  {
+    "name": "Cactus Cooler",
+    "ingredient1": { "name": "Peach Schnapps", "amount": "3/4" },
+    "ingredient2": { "name": "Orange Vodka ", "amount": "3/4" },
+    "ingredient3": { "name": "Orange Juice", "amount": "Splash" },
+    "mix_type": "Shaken",
+    "garnish": "Cherry",
+    "glass": "Shot",
+    "note": "Pour half of one Redbull into pint glass."
+  },
+  {
+    "name": "Southern Hospitality",
+    "ingredient1": { "name": "Southern Comfort", "amount": "3/4" },
+    "ingredient2": { "name": "Watermelon Pucker", "amount": "3/4" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Shot",
+    "note": "Pour half of one Redbull into pint glass."
+  },
+  {
+    "name": "Boilermaker",
+    "ingredient1": { "name": "Whiskey", "amount": "1.5" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Shot",
+    "note": "Fill pint glass halfway with light beer"
+  },
+  {
+    "name": "Flaming Dr Pepper",
+    "ingredient1": { "name": "Amaretto", "amount": "3/4" },
+    "ingredient2": { "name": "Bacardi 151", "amount": "3/4" },
+    "mix_type": "Build in glass",
+    "garnish": "none",
+    "glass": "Shot"
+  }
+]
