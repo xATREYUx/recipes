@@ -215,7 +215,7 @@ const ExpandableComponent = (props) => {
               justifyContent: "center",
             }}
           >
-            {/* Icon area */}
+            {/* Icon areaa */}
             <View
               style={{
                 flex: 1,
