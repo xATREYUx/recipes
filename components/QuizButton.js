@@ -4,22 +4,27 @@ import { Dimensions, StyleSheet, TouchableOpacity, View } from "react-native";
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
-const QuizButton = ({ scrollRef }) => {
+const QuizButton = ({ scrollRef, setInitalScrollIndex }) => {
   const [hit, setHit] = useState(false);
+  //   const [randomIndex] = useState(Math.floor(Math.random() * 60 + 1));
 
-  useEffect(() => {
-    let randomIndex = Math.floor(Math.random() * 60 + 1);
-    scrollRef.current?.scrollToIndex({
-      index: randomIndex,
-      animated: true,
-    });
-  }, [hit]);
+  let randomIndex = Math.floor(Math.random() * 60 + 1);
+  //   let randomIndex = 4;
+  //   useEffect(() => {
+  //     //     setInitalScrollIndex(randomIndex);
+  //     //     // scrollRef.current?.scrollToIndex({
+  //     //     //   index: randomIndex ? randomIndex : 0,
+  //     //     //   animated: true,
+  //     //     //   viewPosition: 0.5,
+  //     //     // });
+  //   }, []);
 
   return (
     <TouchableOpacity
       style={[styles.buttonContainer, { position: "absolute" }]}
       onPress={() => {
         setHit(!hit);
+        setInitalScrollIndex(randomIndex);
         console.log("Quiz Button Hit!");
       }}
     >
