@@ -52,6 +52,7 @@ const Cards = ({ cardData, index }) => {
                 setActive={setActive}
                 index={index}
                 quizCard={quizCard}
+                setQuizCard={setQuizCard}
               />
               {/* {quizCard === index && quizCard === active ? (
                 <QuizCard item={item} />

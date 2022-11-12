@@ -7,12 +7,13 @@ const shot_glass = require("../assets/shot_glass.png");
 const martini_glass = require("../assets/martini2.png");
 
 const ExpandableComponent = (props) => {
+  const { data, active, setActive, index, quizCard, setQuizCard } = props;
+  const [item, setItem] = useState(data);
+
   const [layoutHeight, setlayoutHeight] = useState();
   const [activeBorder, setActiveBorder] = useState();
-  const { data, active, setActive, index, quizCard } = props;
-  const [item, setItem] = useState(data);
-  const [submission, setSubmission] = useState(null);
 
+  // show / hide state
   const [ingredients, setIngredients] = useState({
     ingredient1: true,
     ingredient2: true,
@@ -21,6 +22,44 @@ const ExpandableComponent = (props) => {
     ingredient5: true,
     ingredient6: true,
   });
+
+  const [answer, setAnswer] = useState(null);
+
+  const resetCard = () => {
+    console.log("Reset Initiated", ingredients);
+    setAnswer(null);
+    setQuizCard(null);
+    const allIngredientKeys = Object.keys(ingredients);
+    console.log("allIngredientKeys", allIngredientKeys);
+    let obj = {};
+    const resetIngredients = allIngredientKeys.map((key, index) => {
+      return (obj[key] = true);
+    });
+    setIngredients(obj);
+  };
+
+  const startQuiz = () => {
+    console.log("Quiz started!");
+    const itemKeys = Object.keys(item);
+    const randomKey = itemKeys[Math.floor(Math.random() * itemKeys.length)];
+    console.log("Quiz key: ", randomKey);
+    //ingredient based processing
+    if (
+      randomKey === "ingredient1" ||
+      randomKey === "ingredient2" ||
+      randomKey === "ingredient3" ||
+      randomKey === "ingredient4" ||
+      randomKey === "ingredient5" ||
+      randomKey === "ingredient6"
+    ) {
+      console.log("Quiz is on an ingredient");
+      setAnswer(item[randomKey]["name"]);
+      console.log("The answer is ", item[randomKey]["name"]);
+      setIngredients({ ...ingredients, [randomKey]: false });
+    } else {
+      console.log("Quiz on other than ingredient");
+    }
+  };
 
   let glassIcon = null;
 
@@ -51,24 +90,18 @@ const ExpandableComponent = (props) => {
       break;
   }
 
-  useEffect(() => {}, [ingredients]);
-  //   console.log("PROPS: ", item);
   useEffect(() => {
-    // console.log("active: ", active);
+    console.log("useEffect[active, quizCard]");
     if (active != index) {
       setlayoutHeight(0);
       setActiveBorder(false);
-      //   console.log("setLayoutHeight to ", active);
+      //   resetCard();
     } else {
       setlayoutHeight(null);
       setActiveBorder(true);
-      //   console.log(" to 0", active);
+      active === quizCard ? startQuiz() : null;
     }
   }, [active]);
-
-  const toggleIngredient = (key) => {
-    setIngredients({ ...ingredients, [key]: !ingredients[key] });
-  };
 
   return (
     <>
@@ -106,29 +139,32 @@ const ExpandableComponent = (props) => {
             }}
           >
             <View style={{ flex: 3, flexDirection: "column", height: "100%" }}>
-              {item["ingredient1"] ? (
-                <View style={{ flexDirection: "row" }}>
-                  <View style={{ flex: 3 }}>
-                    {ingredients.ingredient1 ? (
-                      <Text style={[styles.text]}>
-                        {item["ingredient1"]["name"]}
-                      </Text>
-                    ) : (
-                      <Text style={[styles.text]}>?????????</Text>
-                    )}
-                  </View>
-                  <View style={{ flex: 2, alignItems: "flex-end" }}>
-                    <Text style={styles.text}>
-                      {item["ingredient1"]["amount"]}
-                      {["Splash", "Fill", "Float"].includes(
-                        item["ingredient1"]["amount"]
-                      )
-                        ? null
-                        : ""}
-                    </Text>
-                  </View>
-                </View>
-              ) : null}
+              {item["ingredient1"]
+                ? (console.log("ingredient1Render: ", ingredients),
+                  (
+                    <View style={{ flexDirection: "row" }}>
+                      <View style={{ flex: 3 }}>
+                        {ingredients.ingredient1 ? (
+                          <Text style={[styles.text]}>
+                            {item["ingredient1"]["name"]}
+                          </Text>
+                        ) : (
+                          <Text style={[styles.text]}>HIDDEN</Text>
+                        )}
+                      </View>
+                      <View style={{ flex: 2, alignItems: "flex-end" }}>
+                        <Text style={styles.text}>
+                          {item["ingredient1"]["amount"]}
+                          {["Splash", "Fill", "Float"].includes(
+                            item["ingredient1"]["amount"]
+                          )
+                            ? null
+                            : ""}
+                        </Text>
+                      </View>
+                    </View>
+                  ))
+                : null}
               {item["ingredient2"] ? (
                 <View style={{ flexDirection: "row" }}>
                   {ingredients.ingredient2 ? (
@@ -136,7 +172,7 @@ const ExpandableComponent = (props) => {
                       {item["ingredient2"]["name"]}
                     </Text>
                   ) : (
-                    <Text style={[styles.text]}>?????????</Text>
+                    <Text style={[styles.text]}>HIDDEN</Text>
                   )}
                   <View
                     style={{
@@ -164,7 +200,7 @@ const ExpandableComponent = (props) => {
                         {item["ingredient3"]["name"]}
                       </Text>
                     ) : (
-                      <Text style={[styles.text]}>?????????</Text>
+                      <Text style={[styles.text]}>HIDDEN</Text>
                     )}
                   </View>
                   <View style={{ flex: 2, alignItems: "flex-end" }}>
@@ -182,7 +218,7 @@ const ExpandableComponent = (props) => {
                         {item["ingredient4"]["name"]}
                       </Text>
                     ) : (
-                      <Text style={[styles.text]}>?????????</Text>
+                      <Text style={[styles.text]}>HIDDEN</Text>
                     )}
                   </View>
                   <View style={{ flex: 2, alignItems: "flex-end" }}>
@@ -205,7 +241,7 @@ const ExpandableComponent = (props) => {
                         {item["ingredient5"]["name"]}
                       </Text>
                     ) : (
-                      <Text style={[styles.text]}>?????????</Text>
+                      <Text style={[styles.text]}>HIDDEN</Text>
                     )}
                   </View>
                   <View style={{ flex: 2, alignItems: "flex-end" }}>
@@ -228,7 +264,7 @@ const ExpandableComponent = (props) => {
                         {item["ingredient6"]["name"]}
                       </Text>
                     ) : (
-                      <Text style={[styles.text]}>?????????</Text>
+                      <Text style={[styles.text]}>HIDDEN</Text>
                     )}
                   </View>
                   <View style={{ flex: 2, alignItems: "flex-end" }}>
@@ -305,7 +341,7 @@ const ExpandableComponent = (props) => {
         </View>
       </View>
       {active === index ? (
-        <QuizCard toggleIngredient={toggleIngredient} item={item} />
+        <QuizCard item={item} answer={answer} resetCard={resetCard} />
       ) : null}
     </>
   );

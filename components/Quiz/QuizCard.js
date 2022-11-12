@@ -25,35 +25,40 @@ import { View, Button, StyleSheet, Pressable, Text } from "react-native";
 //   return item;
 // };
 
-const QuizCard = ({ toggleIngredient, item }) => {
-  let quizItem = item;
-  const itemKeys = Object.keys(quizItem);
-  const randomKey = itemKeys[Math.floor(Math.random() * itemKeys.length)];
-  console.log("Quiz key: ", randomKey);
-  //ingredient based processing
-  if (
-    randomKey === "ingredient1" ||
-    randomKey === "ingredient2" ||
-    randomKey === "ingredient3" ||
-    randomKey === "ingredient4" ||
-    randomKey === "ingredient5" ||
-    randomKey === "ingredient6"
-  ) {
-    console.log("Quiz is on an ingredient");
-    console.log("The answer is ", item[randomKey]["name"]);
-  }
+const QuizCard = ({ item, answer, resetCard }) => {
+  const win = () => {
+    console.log("You Won!");
+    resetCard();
+  };
+  const wrongAnswer = () => {
+    console.log("Wrong answer, Dummy!");
+  };
+  //   const [submission, setSubmission] = useState();
+
+  const submitAnswer = (submission) => {
+    if (submission === answer) {
+      win();
+    } else {
+      wrongAnswer();
+    }
+  };
 
   return (
     <View style={styles.container}>
       <Pressable
         style={styles.button}
         onPress={() => {
-          toggleIngredient(randomKey);
+          submitAnswer(answer);
         }}
       >
         <Text style={styles.text}>Answer</Text>
       </Pressable>
-      <Pressable style={styles.button} onPress={() => {}}>
+      <Pressable
+        style={styles.button}
+        onPress={() => {
+          resetCard();
+        }}
+      >
         <Text style={styles.text}>Close Quiz</Text>
       </Pressable>
     </View>
