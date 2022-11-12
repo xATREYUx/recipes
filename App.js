@@ -25,46 +25,7 @@ export default function App() {
       <SafeAreaView>
         <StatusBar style="light" />
         <Text style={styles.title}>Drinks</Text>
-
         <Cards cardData={DATA} />
-        {/* <FlatList
-          style={{
-            // width: "95%",
-            // display: "flex",
-            // position: "relative",
-            backgroundColor: "#292929",
-          }}
-          // snapToAlignment="start"
-          ListHeaderComponent={() => {
-            return (
-              <View
-                style={{
-                  height: 20,
-                  width: 10,
-                }}
-              />
-            );
-          }}
-          data={DATA}
-          renderItem={({ item, index }) => (
-            <FlashCard cardData={item} key={index} index={index} />
-          )}
-          showsVerticalScrollIndicator={false}
-          ItemSeparatorComponent={() => {
-            return (
-              <View
-                style={{
-                  height: 20,
-                  width: 10,
-                }}
-              />
-            );
-          }}
-          // snapToAlignment="start"
-          // decelerationRate={0.1}
-          // snapToInterval={height * 0.1 + 20}
-          // scrollEventThrottle={16}
-        /> */}
       </SafeAreaView>
     </View>
   );
@@ -77,6 +38,8 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     // justifyContent: "center",
     width: width,
+    height: height,
+    position: "absolute",
   },
   title: {
     alignSelf: "center",
