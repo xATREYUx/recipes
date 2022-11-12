@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Dimensions, FlatList, StyleSheet, View } from "react-native";
+import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native";
 import ExpandableComponent from "./ExpandableComponent";
-import QuizButton from "./QuizButton";
+import QuizButton from "./Quiz/QuizButton";
+import QuizCard, { quizifyItem } from "./Quiz/QuizCard";
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
@@ -10,10 +11,16 @@ const Cards = ({ cardData, index }) => {
   const scrollRef = useRef(null);
   const [listDataSource, setlistDataSource] = useState(cardData);
 
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState(null); //index of active item
   const [initialScrollIndex, setInitalScrollIndex] = useState(0);
 
+  const [quizCard, setQuizCard] = useState(null); //index of item selected for quizCard
+  const [quizRefs, setQuizRefs] = useState([]);
+
+  const [quizItem, setQuizItem] = useState();
+
   console.log("initialScrollIndex1: ", initialScrollIndex);
+  console.log("active: ", active);
 
   useEffect(() => {
     console.log("initialScrollIndex2: ", initialScrollIndex);
@@ -35,20 +42,31 @@ const Cards = ({ cardData, index }) => {
         ref={scrollRef}
         data={listDataSource}
         initialScrollIndex={initialScrollIndex}
-        renderItem={({ item, index }) => (
-          //   <Text>adsg</Text>
-          <ExpandableComponent
-            key={index}
-            item={item}
-            active={active}
-            setActive={setActive}
-            index={index}
-          />
-        )}
+        renderItem={({ item, index }) => {
+          return (
+            <>
+              <ExpandableComponent
+                key={index}
+                data={item}
+                active={active}
+                setActive={setActive}
+                index={index}
+                quizCard={quizCard}
+              />
+              {/* {quizCard === index && quizCard === active ? (
+                <QuizCard item={item} />
+              ) : null} */}
+            </>
+          );
+        }}
       />
       <QuizButton
-        scrollRef={scrollRef}
         setInitalScrollIndex={setInitalScrollIndex}
+        setActive={setActive}
+        numOfItems={listDataSource.length}
+        setQuizCard={setQuizCard}
+        // setIsQuizMode={setIsQuizMode}
+        // setAnswerSubmission={setAnswerSubmission}
       />
     </View>
   );
