@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import QuizCard from "./Quiz/QuizCard";
+import QuizQuestion, { Celebrate } from "./Quiz/quizHelpers";
 const rocks_glass = require("../assets/rocks_glass.png");
 const collins_glass = require("../assets/collins_glass.png");
 const shot_glass = require("../assets/shot_glass.png");
 const martini_glass = require("../assets/martini2.png");
+const questionMark = require("../assets/questionmark.png");
 
 const ExpandableComponent = (props) => {
   const { data, active, setActive, index, quizCard, setQuizCard } = props;
@@ -12,7 +14,8 @@ const ExpandableComponent = (props) => {
 
   const [layoutHeight, setlayoutHeight] = useState();
   const [activeBorder, setActiveBorder] = useState();
-
+  const [category, setCategory] = useState();
+  const [openQuizCard, setOpenQuizCard] = useState(false);
   // show / hide state
   const [ingredients, setIngredients] = useState({
     ingredient1: true,
@@ -24,11 +27,13 @@ const ExpandableComponent = (props) => {
   });
 
   const [answer, setAnswer] = useState(null);
+  const [celebrate, setCelebrate] = useState(false);
 
   const resetCard = () => {
     console.log("Reset Initiated", ingredients);
     setAnswer(null);
     setQuizCard(null);
+
     const allIngredientKeys = Object.keys(ingredients);
     console.log("allIngredientKeys", allIngredientKeys);
     let obj = {};
@@ -52,6 +57,7 @@ const ExpandableComponent = (props) => {
       randomKey === "ingredient5" ||
       randomKey === "ingredient6"
     ) {
+      setCategory("ingredient");
       console.log("Quiz is on an ingredient");
       setAnswer(item[randomKey]["name"]);
       console.log("The answer is ", item[randomKey]["name"]);
@@ -91,7 +97,7 @@ const ExpandableComponent = (props) => {
   }
 
   useEffect(() => {
-    console.log("useEffect[active, quizCard]");
+    console.log(`useEffect[${active}, ${quizCard}]`);
     if (active != index) {
       setlayoutHeight(0);
       setActiveBorder(false);
@@ -99,6 +105,7 @@ const ExpandableComponent = (props) => {
     } else {
       setlayoutHeight(null);
       setActiveBorder(true);
+
       active === quizCard ? startQuiz() : null;
     }
   }, [active]);
@@ -111,6 +118,8 @@ const ExpandableComponent = (props) => {
           {
             borderColor: activeBorder ? "white" : null,
             minHeight: activeBorder ? 300 : null,
+            position: "relative",
+            overflow: "hidden",
           },
         ]}
       >
@@ -122,217 +131,234 @@ const ExpandableComponent = (props) => {
         >
           <Text style={[styles.itemText]}>{item.name}</Text>
         </TouchableOpacity>
-
+        <Celebrate celebrate={celebrate} layoutHeight={layoutHeight} />
         <View
           style={[
             {
               height: layoutHeight,
               overflow: "hidden",
+              //   position: "relative",
+              //   height: "100%",
+              //   overflow: "visible",
               // backgroundColor: "orange",
             },
           ]}
         >
           <View
-            style={{
-              flexDirection: "row",
-              display: "flex",
-            }}
+            style={
+              {
+                //   overflow: "hidden",
+                //   position: "absolute",
+              }
+            }
           >
-            <View style={{ flex: 3, flexDirection: "column", height: "100%" }}>
-              {item["ingredient1"]
-                ? (console.log("ingredient1Render: ", ingredients),
-                  (
-                    <View style={{ flexDirection: "row" }}>
-                      <View style={{ flex: 3 }}>
-                        {ingredients.ingredient1 ? (
-                          <Text style={[styles.text]}>
-                            {item["ingredient1"]["name"]}
-                          </Text>
-                        ) : (
-                          <Text style={[styles.text]}>HIDDEN</Text>
-                        )}
-                      </View>
-                      <View style={{ flex: 2, alignItems: "flex-end" }}>
-                        <Text style={styles.text}>
-                          {item["ingredient1"]["amount"]}
-                          {["Splash", "Fill", "Float"].includes(
-                            item["ingredient1"]["amount"]
-                          )
-                            ? null
-                            : ""}
-                        </Text>
-                      </View>
-                    </View>
-                  ))
-                : null}
-              {item["ingredient2"] ? (
-                <View style={{ flexDirection: "row" }}>
-                  {ingredients.ingredient2 ? (
-                    <Text style={[styles.text]}>
-                      {item["ingredient2"]["name"]}
-                    </Text>
-                  ) : (
-                    <Text style={[styles.text]}>HIDDEN</Text>
-                  )}
-                  <View
-                    style={{
-                      flex: 2,
-                      alignItems: "flex-end",
-                      // backgroundColor: "red",
-                    }}
-                  >
-                    <Text style={styles.text}>
-                      {item["ingredient2"]["amount"]}
-                      {["Splash", "Fill", "Float"].includes(
-                        item["ingredient2"]["amount"]
-                      )
-                        ? null
-                        : ""}
-                    </Text>
-                  </View>
-                </View>
-              ) : null}
-              {item["ingredient3"] ? (
-                <View style={{ flexDirection: "row" }}>
-                  <View style={{ flex: 3 }}>
-                    {ingredients.ingredient3 ? (
-                      <Text style={[styles.text]}>
-                        {item["ingredient3"]["name"]}
-                      </Text>
-                    ) : (
-                      <Text style={[styles.text]}>HIDDEN</Text>
-                    )}
-                  </View>
-                  <View style={{ flex: 2, alignItems: "flex-end" }}>
-                    <Text style={[styles.text]}>
-                      {item["ingredient3"]["amount"]}
-                    </Text>
-                  </View>
-                </View>
-              ) : null}
-              {item["ingredient4"] ? (
-                <View style={{ flexDirection: "row" }}>
-                  <View style={{ flex: 3 }}>
-                    {ingredients.ingredient4 ? (
-                      <Text style={[styles.text]}>
-                        {item["ingredient4"]["name"]}
-                      </Text>
-                    ) : (
-                      <Text style={[styles.text]}>HIDDEN</Text>
-                    )}
-                  </View>
-                  <View style={{ flex: 2, alignItems: "flex-end" }}>
-                    <Text style={styles.text}>
-                      {item["ingredient4"]["amount"]}
-                      {["Splash", "Fill", "Float"].includes(
-                        item["ingredient4"]["amount"]
-                      )
-                        ? null
-                        : ""}
-                    </Text>
-                  </View>
-                </View>
-              ) : null}
-              {item["ingredient5"] ? (
-                <View style={{ flexDirection: "row" }}>
-                  <View style={{ flex: 3 }}>
-                    {ingredients.ingredient5 ? (
-                      <Text style={[styles.text]}>
-                        {item["ingredient5"]["name"]}
-                      </Text>
-                    ) : (
-                      <Text style={[styles.text]}>HIDDEN</Text>
-                    )}
-                  </View>
-                  <View style={{ flex: 2, alignItems: "flex-end" }}>
-                    <Text style={styles.text}>
-                      {item["ingredient5"]["amount"]}
-                      {["Splash", "Fill", "Float"].includes(
-                        item["ingredient5"]["amount"]
-                      )
-                        ? null
-                        : ""}
-                    </Text>
-                  </View>
-                </View>
-              ) : null}
-              {item["ingredient6"] ? (
-                <View style={{ flexDirection: "row" }}>
-                  <View style={{ flex: 3 }}>
-                    {ingredients.ingredient6 ? (
-                      <Text style={[styles.text]}>
-                        {item["ingredient6"]["name"]}
-                      </Text>
-                    ) : (
-                      <Text style={[styles.text]}>HIDDEN</Text>
-                    )}
-                  </View>
-                  <View style={{ flex: 2, alignItems: "flex-end" }}>
-                    <Text style={styles.text}>
-                      {item["ingredient6"]["amount"]}
-                      {["Splash", "Fill", "Float"].includes(
-                        item["ingredient6"]["amount"]
-                      )
-                        ? null
-                        : ""}
-                    </Text>
-                  </View>
-                </View>
-              ) : null}
-
-              <View style={{ flexDirection: "row" }}>
-                <Text style={styles.text}>
-                  {item["note"] ? item["note"] : null}
-                </Text>
-              </View>
-            </View>
-            {/* Right Column */}
             <View
               style={{
-                flex: 2,
+                flexDirection: "row",
+                display: "flex",
                 height: "100%",
-                flexDirection: "column",
-                //   alignContent: "space-around",
-                justifyContent: "center",
+                overflow: "visible",
               }}
             >
-              {/* Icon areaa */}
               <View
                 style={{
-                  flex: 1,
-                  maxHeight: 150,
+                  flex: 3,
+                  flexDirection: "column",
+                  height: "100%",
+                  overflow: "visible",
                 }}
               >
-                <Image
-                  source={glassIcon}
-                  style={[
-                    styles.image,
-                    { flex: 1, width: "100%", height: "100%" },
-                  ]}
-                />
-                <View />
-                <View style={{ flex: 1 }}>
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      width: "100%",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Text style={[styles.text, { alignSelf: "center" }]}>
-                      {item["glass"]}
-                    </Text>
-                    {/* <Text> </Text>
-                    <Text style={styles.text}>Glass</Text> */}
-                  </View>
+                {item["ingredient1"]
+                  ? (console.log("ingredient1Render: ", ingredients),
+                    (
+                      <View style={{ flexDirection: "row" }}>
+                        <View style={{ flex: 3 }}>
+                          {ingredients.ingredient1 ? (
+                            <Text style={[styles.text]}>
+                              {item["ingredient1"]["name"]}
+                            </Text>
+                          ) : (
+                            <QuizQuestion celebrate={celebrate} />
+                          )}
+                        </View>
+                        <View style={{ flex: 2, alignItems: "flex-end" }}>
+                          <Text style={styles.text}>
+                            {item["ingredient1"]["amount"]}
+                            {["Splash", "Fill", "Float"].includes(
+                              item["ingredient1"]["amount"]
+                            )
+                              ? null
+                              : ""}
+                          </Text>
+                        </View>
+                      </View>
+                    ))
+                  : null}
+                {item["ingredient2"] ? (
                   <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.text}>
-                      {["none", undefined].includes(item["garnish"])
-                        ? "No"
-                        : item["garnish"]}
-                    </Text>
-                    {/* <Text> </Text>
-                  <Text style={styles.text}>Garnish</Text> */}
+                    {ingredients.ingredient2 ? (
+                      <Text style={[styles.text]}>
+                        {item["ingredient2"]["name"]}
+                      </Text>
+                    ) : (
+                      <QuizQuestion celebrate={celebrate} />
+                    )}
+                    <View
+                      style={{
+                        flex: 2,
+                        alignItems: "flex-end",
+                        // backgroundColor: "red",
+                      }}
+                    >
+                      <Text style={styles.text}>
+                        {item["ingredient2"]["amount"]}
+                        {["Splash", "Fill", "Float"].includes(
+                          item["ingredient2"]["amount"]
+                        )
+                          ? null
+                          : ""}
+                      </Text>
+                    </View>
+                  </View>
+                ) : null}
+                {item["ingredient3"] ? (
+                  <View style={{ flexDirection: "row" }}>
+                    <View style={{ flex: 3 }}>
+                      {ingredients.ingredient3 ? (
+                        <Text style={[styles.text]}>
+                          {item["ingredient3"]["name"]}
+                        </Text>
+                      ) : (
+                        <QuizQuestion celebrate={celebrate} />
+                      )}
+                    </View>
+                    <View style={{ flex: 2, alignItems: "flex-end" }}>
+                      <Text style={[styles.text]}>
+                        {item["ingredient3"]["amount"]}
+                      </Text>
+                    </View>
+                  </View>
+                ) : null}
+                {item["ingredient4"] ? (
+                  <View style={{ flexDirection: "row" }}>
+                    <View style={{ flex: 3 }}>
+                      {ingredients.ingredient4 ? (
+                        <Text style={[styles.text]}>
+                          {item["ingredient4"]["name"]}
+                        </Text>
+                      ) : (
+                        <QuizQuestion celebrate={celebrate} />
+                      )}
+                    </View>
+                    <View style={{ flex: 2, alignItems: "flex-end" }}>
+                      <Text style={styles.text}>
+                        {item["ingredient4"]["amount"]}
+                        {["Splash", "Fill", "Float"].includes(
+                          item["ingredient4"]["amount"]
+                        )
+                          ? null
+                          : ""}
+                      </Text>
+                    </View>
+                  </View>
+                ) : null}
+                {item["ingredient5"] ? (
+                  <View style={{ flexDirection: "row" }}>
+                    <View style={{ flex: 3 }}>
+                      {ingredients.ingredient5 ? (
+                        <Text style={[styles.text]}>
+                          {item["ingredient5"]["name"]}
+                        </Text>
+                      ) : (
+                        <QuizQuestion celebrate={celebrate} />
+                      )}
+                    </View>
+                    <View style={{ flex: 2, alignItems: "flex-end" }}>
+                      <Text style={styles.text}>
+                        {item["ingredient5"]["amount"]}
+                        {["Splash", "Fill", "Float"].includes(
+                          item["ingredient5"]["amount"]
+                        )
+                          ? null
+                          : ""}
+                      </Text>
+                    </View>
+                  </View>
+                ) : null}
+                {item["ingredient6"] ? (
+                  <View style={{ flexDirection: "row" }}>
+                    <View style={{ flex: 3 }}>
+                      {ingredients.ingredient6 ? (
+                        <Text style={[styles.text]}>
+                          {item["ingredient6"]["name"]}
+                        </Text>
+                      ) : (
+                        <QuizQuestion celebrate={celebrate} />
+                      )}
+                    </View>
+                    <View style={{ flex: 2, alignItems: "flex-end" }}>
+                      <Text style={styles.text}>
+                        {item["ingredient6"]["amount"]}
+                        {["Splash", "Fill", "Float"].includes(
+                          item["ingredient6"]["amount"]
+                        )
+                          ? null
+                          : ""}
+                      </Text>
+                    </View>
+                  </View>
+                ) : null}
+
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.text}>
+                    {item["note"] ? item["note"] : null}
+                  </Text>
+                </View>
+              </View>
+              {/* Right Column */}
+              <View
+                style={{
+                  flex: 2,
+                  height: "100%",
+                  flexDirection: "column",
+                  //   alignContent: "space-around",
+                  justifyContent: "center",
+                }}
+              >
+                {/* Icon areaa */}
+                <View
+                  style={{
+                    flex: 1,
+                    maxHeight: 150,
+                  }}
+                >
+                  <Image
+                    source={glassIcon}
+                    style={[
+                      styles.image,
+                      { flex: 1, width: "100%", height: "100%" },
+                    ]}
+                  />
+                  <View />
+                  <View style={{ flex: 1 }}>
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        width: "100%",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <Text style={[styles.text, { alignSelf: "center" }]}>
+                        {item["glass"]}
+                      </Text>
+                    </View>
+                    <View style={{ flexDirection: "row" }}>
+                      <Text style={styles.text}>
+                        {["none", undefined].includes(item["garnish"])
+                          ? "No"
+                          : item["garnish"]}
+                      </Text>
+                    </View>
                   </View>
                 </View>
               </View>
@@ -340,8 +366,15 @@ const ExpandableComponent = (props) => {
           </View>
         </View>
       </View>
-      {active === index ? (
-        <QuizCard item={item} answer={answer} resetCard={resetCard} />
+      {index === quizCard && index === active ? (
+        <QuizCard
+          item={item}
+          answer={answer}
+          resetCard={resetCard}
+          category={category}
+          setCategory={setCategory}
+          setCelebrate={setCelebrate}
+        />
       ) : null}
     </>
   );
