@@ -12,9 +12,39 @@ const RAW_DATA = require("./drink_list");
 //sort Data alphabeticaly
 const DATA = RAW_DATA.sort((a, b) => (a.name > b.name ? 1 : -1));
 
+// const getDrinks = () => {
+//   let drinks = [];
+//   DATA.map((item, index) => {
+//     const keys = Object.keys(item);
+//     keys.map((k, i) => {
+//       if (
+//         k === "ingredient1" ||
+//         k === "ingredient2" ||
+//         k === "ingredient3" ||
+//         k === "ingredient4" ||
+//         k === "ingredient5" ||
+//         k === "ingredient6"
+//       ) {
+//         drinks.push(item[k].name);
+//       }
+//     });
+//   });
+//   drinks = [...new Set(drinks)];
+//   drinks = drinks.sort((a, b) => {
+//     if (a < b) {
+//       return -1;
+//     }
+//     if (a > b) {
+//       return 1;
+//     }
+//     return 0;
+//   });
+//   return drinks;
+// };
+// const drinks = getDrinks();
+// console.log("getDrinks: ", drinks);
+
 console.log("Clean DATA - first object: ", DATA[1]);
-// const jlines = readJsonLines(jLinesFile);
-// const DATA = require("./drink_list.json");
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;

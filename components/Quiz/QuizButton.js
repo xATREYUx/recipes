@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Dimensions, StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
@@ -34,9 +40,13 @@ const QuizButton = ({
           width: 50,
           height: 50,
           borderRadius: 40,
-          backgroundColor: "green",
+          backgroundColor: "#850d27",
+          justifyContent: "center",
+          alignItems: "center",
         }}
-      ></View>
+      >
+        <Text style={{ fontSize: 30, color: "white" }}>Q</Text>
+      </View>
     </TouchableOpacity>
   );
 };

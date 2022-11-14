@@ -19,6 +19,7 @@
     "react-native-flip-card": "^3.5.6",
     "react-native-gesture-flip-card": "^1.0.6",
     "react-native-web": "~0.18.7",
+    "react-native-wheel-scrollview-picker": "^2.0.1",
     "read-json-lines-sync": "^2.2.2"
   },
   "devDependencies": {
